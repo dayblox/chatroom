@@ -1,0 +1,28 @@
+{
+  "name": "plot",
+  "version": "1.0.0",
+  "author": "dayblox",
+  "description": "WebSocket chatrooms server",
+  "main": "src/index.ts",
+  "type": "module",
+  "volta": {
+    "node": "18.13.0"
+  },
+  "engines": {
+    "node": ">=18.11.0"
+  },
+  "scripts": {
+    "dev": "node --inspect --no-warnings -r ./env.ts --loader tsm --watch src/index.ts",
+    "build": "esbuild src/index.ts --bundle --format=esm --minify --outdir=dist --packages=external --platform=node --sourcemap",
+    "start": "node dist"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/ws": "^8.5.4",
+    "tsm": "^2.3.0"
+  },
+  "dependencies": {
+    "esbuild": "^0.16.16",
+    "ws": "^8.12.0"
+  }
+}
